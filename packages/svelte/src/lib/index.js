@@ -1,1 +1,1 @@
-// Reexport your entry components here
+export { default as AwePlayer } from './AwePlayer.svelte';

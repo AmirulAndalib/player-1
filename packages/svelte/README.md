@@ -1,3 +1,3 @@
 # AwePlayer Svelte
 
-Checkout the Docs
+refer docs
