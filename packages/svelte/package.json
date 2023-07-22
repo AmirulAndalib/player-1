@@ -48,7 +48,7 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"material-icons": "^1.13.8",
-		"screenfull": "^6.0.2"
+		"screenfull": "^6.0.2",
+		"@awe-player/ui": "workspace:*"
 	}
 }

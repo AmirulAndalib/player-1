@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '@awe-player/ui/main.css';
 	import 'material-icons/iconfont/round.css';
 	import PlayerLite from './PlayerLite.svelte';
 	import PlayerPro from './PlayerPro.svelte';
