@@ -2,17 +2,19 @@
   <nav
     class="w-full h-full px-2 max-w-4xl mx-auto flex justify-between items-center"
   >
-    <div class="flex items-center space-x-2">
-      <img class="w-8 h-8 my-auto aspect-square" src="/logo.png" alt="" />
-      <div class="font-semibold">AwePlayer</div>
+    <div>
+      <a class="flex items-center space-x-2" href="/">
+        <img class="w-8 h-8 my-auto aspect-square" src="/logo.png" alt="" />
+        <div class="font-semibold">AwePlayer</div>
+      </a>
     </div>
     <div class="h-full">
       <ul class="flex h-full space-x-4">
         <li>
-          <a href="">Docs</a>
+          <a class="nav-link" href="/docs">Docs</a>
         </li>
         <li>
-          <a href="">
+          <a class="nav-link" href="">
             <div class="w-4 h-4 aspect-square">
               <img
                 class="w-full h-full"
@@ -22,7 +24,7 @@
           </a>
         </li>
         <li>
-          <a href="">
+          <a class="nav-link" href="">
             <div class="w-4 h-4 aspect-square">
               <img
                 class="w-full h-full"
@@ -40,7 +42,7 @@
   li {
     @apply h-full w-full flex justify-center items-center p-1;
   }
-  a {
+  .nav-link {
     @apply opacity-75 hover:opacity-100 transition-opacity ease-out w-full h-full flex justify-center items-center;
   }
 </style>
