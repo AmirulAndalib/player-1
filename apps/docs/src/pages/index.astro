@@ -4,7 +4,16 @@ import Layout from "../layouts/HomeLayout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <SveltePlayer client:load />
+  <main class="space-y-10 z-40 bg-[url('/bg.png')] bg-no-repeat bg-cover">
+    <div>
+      <div>
+        <h1 class="text-8xl font-bold text-center p-20">
+          A Powerfull and Elegant Media Player.
+        </h1>
+      </div>
+    </div>
+    <div class="pb-44">
+      <SveltePlayer client:load />
+    </div>
   </main>
 </Layout>

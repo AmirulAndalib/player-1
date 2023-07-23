@@ -1,23 +1,43 @@
-<div class="w-full">
+<div class="w-full h-14 sticky top-0 bg-zinc-950/80 backdrop-blur-xl z-50">
   <nav
-    class="max-w-4xl w-full mx-auto text-sm flex justify-between items-center"
+    class="w-full h-full px-2 max-w-4xl mx-auto flex justify-between items-center"
   >
-    <div class="flex items-center">
-      <div class="w-12 aspect-square p-2">
-        <img class="w-full h-full" src="/logo.png" alt="" />
-      </div>
-      <span class="font-semibold">AwePlayer</span>
+    <div class="flex items-center space-x-2">
+      <img class="w-8 h-8 my-auto aspect-square" src="/logo.png" alt="" />
+      <div class="font-semibold">AwePlayer</div>
     </div>
-    <ul class="flex space-x-2 items-center">
-      <li>
-        <img
-          height="16"
-          width="16"
-          src="https://cdn.simpleicons.org/github/white"
-        />
-      </li>
-      <li>GitHub</li>
-      <li>GitHub</li>
-    </ul>
+    <div class="h-full">
+      <ul class="flex h-full space-x-4">
+        <li>
+          <a href="">
+            <div class="w-4 h-4 aspect-square">
+              <img
+                class="w-full h-full"
+                src="https://cdn.simpleicons.org/npm/white"
+              />
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="w-4 h-4 aspect-square">
+              <img
+                class="w-full h-full"
+                src="https://cdn.simpleicons.org/github/white"
+              />
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
+
+<style lang="postcss">
+  li {
+    @apply h-full w-full flex justify-center items-center p-1;
+  }
+  a {
+    @apply opacity-75 hover:opacity-100 transition-opacity ease-out w-full h-full flex justify-center items-center;
+  }
+</style>
