@@ -1,12 +1,23 @@
 {
   "name": "@awe-player/icons",
   "version": "0.0.1",
-  "description": "",
+  "type": "module",
+  "description": "Modified icons from https://fonts.google.com and https://iconduck.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "svgtofont": {
+    "css": {
+      "fontSize": "12px"
+    }
+  },
+  "keywords": [
+    "awe-icons"
+  ],
+  "author": "AwePlayer",
+  "license": "ISC",
+  "dependencies": {
+    "svgtofont": "^3.25.4"
+  }
 }

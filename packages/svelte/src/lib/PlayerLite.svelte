@@ -1,31 +1,23 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import screenfull from 'screenfull';
-	import { writable } from 'svelte/store';
 	import { shortcut } from './utils/shortcut.js';
+	import playerStateStore from './store/playerStateStore.js';
 
 	let fullscreenElement: HTMLDivElement;
 
-	const playerState = writable({
-		hideSlider: false,
-		alwaysSlowSlider: true,
-		paused: true,
-		muted: false,
-		isFullscreen: false
-	});
-
 	const handlePlayPauseToggle = () => {
-		$playerState.paused = !$playerState.paused;
+		$playerStateStore.paused = !$playerStateStore.paused;
 	};
 
 	const handleMuteToggle = () => {
-		$playerState.muted = !$playerState.muted;
+		$playerStateStore.muted = !$playerStateStore.muted;
 	};
 
 	// uses screenful lib to manage and control fullscreen sessions
 	const handleFullscreenToggle = () => {
 		if (screenfull.isEnabled) {
-			$playerState.isFullscreen = !$playerState.isFullscreen;
+			$playerStateStore.isFullscreen = !$playerStateStore.isFullscreen;
 			screenfull.toggle(fullscreenElement);
 		}
 	};
@@ -35,8 +27,8 @@
 	<!-- svelte-ignore a11y-media-has-caption -->
 	<video
 		class="w-full h-full"
-		bind:paused={$playerState.paused}
-		bind:muted={$playerState.muted}
+		bind:paused={$playerStateStore.paused}
+		bind:muted={$playerStateStore.muted}
 		src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
 	/>
 	<div class="absolute top-0 h-full bottom-0 left-0 right-0 w-full">
@@ -46,54 +38,48 @@
 		<div class="absolute top-0 bottom-0 left-0 right-0 w-fit h-fit m-auto">
 			<button
 				class="animate-button hover:scale-110 transition-transform ease-out aspect-square h-fit w-fit flex justify-center items-center"
-				use:shortcut={{ shift: true, code: 'Digit1' }}
+				use:shortcut={{ code: 'Space' }}
 				on:click={handlePlayPauseToggle}
 			>
-				{#if $playerState.paused}
-					<span
-						transition:fade={{ duration: 100 }}
-						class="text-6xl material-icons-round text-white"
-					>
-						play_arrow
+				{#if $playerStateStore.paused}
+					<span transition:fade={{ duration: 100 }}>
+						<i class="awe-play text-6xl" />
 					</span>
 				{:else}
-					<span
-						transition:fade={{ duration: 100 }}
-						class="text-6xl material-icons-round text-white"
-					>
-						pause
+					<span transition:fade={{ duration: 100 }}>
+						<i class="awe-pause text-6xl" />
 					</span>
 				{/if}
 			</button>
 		</div>
-		<div class="absolute right-0 bottom-0 flex p-4">
+		<div class="absolute right-0 bottom-0 flex p-2">
 			<button
 				class="animate-button hover:scale-110 transition-transform ease-out aspect-square h-14 w-14 flex justify-center items-center"
-				use:shortcut={{ shift: true, code: 'Digit1' }}
+				use:shortcut={{ code: 'KeyM' }}
 				on:click={handleMuteToggle}
 			>
-				{#if $playerState.muted}
-					<span transition:fade={{ duration: 100 }} class="material-icons-round text-white">
-						volume_off
+				{#if $playerStateStore.muted}
+					<span transition:fade={{ duration: 100 }}>
+						<i class="awe-volume-mute text-xl lg:text-2xl" />
 					</span>
 				{:else}
-					<span transition:fade={{ duration: 100 }} class="material-icons-round text-white">
-						volume_up
+					<span transition:fade={{ duration: 100 }}>
+						<i class="awe-volume-max text-xl lg:text-2xl" />
 					</span>
 				{/if}
 			</button>
 			<button
 				class="animate-button hover:scale-110 transition-transform ease-out aspect-square h-14 w-14 flex justify-center items-center"
-				use:shortcut={{ shift: true, code: 'Digit1' }}
+				use:shortcut={{ code: 'KeyF' }}
 				on:click={handleFullscreenToggle}
 			>
-				{#if $playerState.isFullscreen}
-					<span transition:fade={{ duration: 100 }} class="material-icons-round text-white">
-						fullscreen_exit
+				{#if $playerStateStore.isFullscreen}
+					<span transition:fade={{ duration: 100 }}>
+						<i class="awe-fullscreen-exit text-2xl" />
 					</span>
 				{:else}
-					<span transition:fade={{ duration: 100 }} class="material-icons-round text-white">
-						fullscreen
+					<span transition:fade={{ duration: 100 }}>
+						<i class="awe-fullscreen-enter text-2xl" />
 					</span>
 				{/if}
 			</button>

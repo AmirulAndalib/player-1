@@ -12,6 +12,7 @@
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
+  "author": "AwePlayer",
   "packageManager": "pnpm@7.15.0",
   "name": "@awe-player/awe-player"
 }

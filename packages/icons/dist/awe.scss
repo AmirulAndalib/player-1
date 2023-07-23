@@ -1,0 +1,53 @@
+@font-face {font-family: "awe";
+  src: url('awe.eot?t=1690102696218'); /* IE9*/
+  src: url('awe.eot?t=1690102696218#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("awe.woff2?t=1690102696218") format("woff2"),
+  url("awe.woff?t=1690102696218") format("woff"),
+  url('awe.ttf?t=1690102696218') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('awe.svg?t=1690102696218#awe') format('svg'); /* iOS 4.1- */
+}
+
+[class^="awe-"], [class*=" awe-"] {
+  font-family: 'awe' !important;
+  font-size: 12px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.awe-forward-10:before { content: "\ea01"; }
+.awe-fullscreen-enter:before { content: "\ea02"; }
+.awe-fullscreen-exit:before { content: "\ea03"; }
+.awe-github:before { content: "\ea04"; }
+.awe-info:before { content: "\ea05"; }
+.awe-pause:before { content: "\ea06"; }
+.awe-pip:before { content: "\ea07"; }
+.awe-play:before { content: "\ea08"; }
+.awe-preview-arrow:before { content: "\ea09"; }
+.awe-replay-10:before { content: "\ea0a"; }
+.awe-settings:before { content: "\ea0b"; }
+.awe-skip-next:before { content: "\ea0c"; }
+.awe-skip-previous:before { content: "\ea0d"; }
+.awe-subtitles:before { content: "\ea0e"; }
+.awe-volume-low:before { content: "\ea0f"; }
+.awe-volume-max:before { content: "\ea10"; }
+.awe-volume-mute:before { content: "\ea11"; }
+
+$awe-forward-10: "\ea01";
+$awe-fullscreen-enter: "\ea02";
+$awe-fullscreen-exit: "\ea03";
+$awe-github: "\ea04";
+$awe-info: "\ea05";
+$awe-pause: "\ea06";
+$awe-pip: "\ea07";
+$awe-play: "\ea08";
+$awe-preview-arrow: "\ea09";
+$awe-replay-10: "\ea0a";
+$awe-settings: "\ea0b";
+$awe-skip-next: "\ea0c";
+$awe-skip-previous: "\ea0d";
+$awe-subtitles: "\ea0e";
+$awe-volume-low: "\ea0f";
+$awe-volume-max: "\ea10";
+$awe-volume-mute: "\ea11";
+
