@@ -6,13 +6,36 @@ import Layout from "../layouts/HomeLayout.astro";
 <Layout title="Welcome to Astro.">
   <main class="space-y-10 z-40 bg-[url('/bg.png')] bg-no-repeat bg-cover">
     <div>
-      <div>
-        <h1 class="text-8xl font-bold text-center p-20">
+      <div class="flex flex-col justify-center items-center p-20 space-y-10">
+        <div class="w-fit rounded-full px-2.5 py-1 bg-white backdrop-blur-xl">
+          <span
+            class="flex justify-center items-center text-base font-bold text-black"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="black"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="#1c274c">
+                <path
+                  d="m7.45284 2.71266c.37476-.95022 1.71956-.95021 2.09432.00001l1.16134 2.94465c.1144.29011.3441.51975.6342.63416l2.9446 1.16136c.9503.37476.9503 1.71956 0 2.09432l-2.9446 1.16134c-.2901.1144-.5198.3441-.6342.6342l-1.16134 2.9446c-.37476.9503-1.71956.9503-2.09432 0l-1.16136-2.9446c-.11441-.2901-.34405-.5198-.63416-.6342l-2.94466-1.16134c-.95022-.37476-.95021-1.71956.00001-2.09432l2.94465-1.16136c.29011-.11441.51975-.34405.63416-.63416z"
+                >
+                </path><path
+                  d="m16.9245 13.3916c.206-.5221.945-.5221 1.151 0l.9006 2.2837c.0629.1595.1891.2857.3486.3486l2.2837.9006c.5221.206.5221.945 0 1.151l-2.2837.9006c-.1595.0629-.2857.1891-.3486.3486l-.9006 2.2837c-.206.5221-.945.5221-1.151 0l-.9006-2.2837c-.0629-.1595-.1891-.2857-.3486-.3486l-2.2837-.9006c-.5221-.206-.5221-.945 0-1.151l2.2837-.9006c.1595-.0629.2857-.1891.3486-.3486z"
+                >
+                </path>
+              </g>
+            </svg>
+            <span class="px-2">Alpha</span>
+          </span>
+        </div>
+        <h1 class="text-8xl font-bold text-center">
           A Powerfull and Elegant Media Player.
         </h1>
       </div>
     </div>
-    <div class="pb-44">
+    <div class="pb-10">
       <SveltePlayer client:load />
     </div>
   </main>
