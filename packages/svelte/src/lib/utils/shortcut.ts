@@ -22,7 +22,6 @@ export const shortcut = (node: HTMLElement, params?: ShortcutParams): Shortcut =
 		if (!params) return;
 
 		handler = (e: KeyboardEvent): void => {
-			console.log(e.code);
 			if (
 				!!params.alt !== e.altKey ||
 				!!params.shift !== e.shiftKey ||
