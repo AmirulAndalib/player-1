@@ -20,6 +20,12 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+      - name: Change working directory to ./apps/docs
+        working-directory: ./apps/docs
+        run: |
+          # This step will change the working directory to ./apps/docs
+          # No commands needed here, the working directory will be changed for the subsequent steps
+
       - name: Install, build, and upload your site
         uses: withastro/action@v0
         # with:
@@ -34,6 +40,16 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Change working directory to ./apps/docs
+        working-directory: ./apps/docs
+        run: |
+          # This step will change the working directory to ./apps/docs
+          # No commands needed here, the working directory will be changed for the subsequent steps
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        # with:
+        # branch: main # Branch to push to GitHub Pages (you can change this if needed)
+        # folder: .dist # The folder to deploy to GitHub Pages (optional, default is the root of the repository)
+        # If you want to specify a custom domain for your GitHub Pages site, you can use the custom_domain option.
