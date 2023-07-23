@@ -19,7 +19,7 @@ jobs:
         run: npm install -g pnpm
       - name: Build all packages in the root directory
         working-directory: .
-        run: pnpm build
+        run: pnpm install && pnpm build
       - name: Install, build, and upload your site
         uses: withastro/action@v0
         with:
