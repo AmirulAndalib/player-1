@@ -29,7 +29,7 @@
 		class="w-full h-full"
 		bind:paused={$playerStateStore.paused}
 		bind:muted={$playerStateStore.muted}
-		src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+		src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
 	/>
 	<div class="absolute top-0 h-full bottom-0 left-0 right-0 w-full">
 		<div class="absolute left-0 right-0 top-0 p-4 flex w-full items-center space-x-2">
